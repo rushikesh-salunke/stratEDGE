@@ -1,0 +1,24 @@
+:host {
+	.pieWidget {
+		height: 100%;
+		width: 100%;
+	}
+
+	.pieWidget__number {
+		font-weight: 600;
+		font-size: 1.8rem;
+	}
+
+	.pieWidget__content {
+		width: 80%;
+	}
+
+	.pieWidget__desc {
+		color: #a7abc3;
+		font-size: 1.1rem;
+		font-weight: 400;
+		margin-top: 0.55rem;
+		float:left;
+		margin-bottom:3rem;
+	}
+}

@@ -1,0 +1,71 @@
+<div class="row">
+	<div class="col-xl-12">
+		<kt-material-preview [viewItem]="exampleBasicPanel">
+			<div class="kt-section">
+				<div class="kt-section__content">
+					<mat-accordion>
+						<mat-expansion-panel>
+							<mat-expansion-panel-header>
+								<mat-panel-title>
+									<img style="height:20px" src="../../../../../../assets/images/Google.png" />
+								</mat-panel-title>
+							</mat-expansion-panel-header>
+							<div class="m-login__options">
+								<a href="javascript:;" (click)="Googleurl()" *ngIf="!isAuthgoogle" id="google" mat-raised-button color="warn">
+									<span>
+										<i class="fab fa-google"></i>&nbsp;
+										<span>Google</span>
+									</span>
+								</a>
+								<div class="row" *ngIf="isAuthgoogle">
+									<div *ngFor="let google of arrayres">
+										<div class="btn btn-default" style="margin-right:5px" *ngIf="google.GoogleLinkedEmail == 'N/A'?false:true">
+											<a href="javascript:void(0)" style="margin-right:5px" id="{{google.GoogleLinkedEmail}}" (click)=" (google.CustomerID == null) && openDialog() || onChange($event) " [ngClass]="{red: google.CustomerID == null, blue: google.CustomerID != null}">{{google.GoogleLinkedEmail}}</a>
+											<a href="javascript:void(0)" (click)="ConfirmationDialogOpen()" ><i class="flaticon-circle"></i></a>
+										</div>
+									</div>
+									<a href="javascript:;" (click)="Googleurl()" *ngIf="isAuthgoogle" id="google" mat-raised-button color="warn">
+										<span>
+											<i class="fab fa-google"></i>&nbsp;
+											<span>Google</span>
+										</span>
+									</a>
+								</div>
+							</div>
+						</mat-expansion-panel>
+						<mat-expansion-panel>
+							<mat-expansion-panel-header>
+								<mat-panel-title>
+									<img style="height:20px" src="../../../../../../assets/images/twitter.png" />
+								</mat-panel-title>
+							</mat-expansion-panel-header>
+							<div class="m-login__options">
+								<a href="javascript:;" (click)="Twitterurl()" *ngIf="!isAuthtwitter" mat-raised-button color="accent">
+									<span>
+										<i class="fab fa-twitter"></i>&nbsp;
+										<span>Twitter</span>
+									</span>
+								</a>
+
+								<div class="row" *ngIf="isAuthtwitter">
+									<div *ngFor="let twitter of arrayres">
+										<div class="btn btn-default" style="margin-right:5px" *ngIf="twitter.TwitterLinkedEmail == 'N/A'?false:true">
+											<a href="javascript:void(0)" style="margin-right:5px" id="{{twitter.TwitterLinkedEmail}}">{{twitter.TwitterLinkedEmail}}</a>
+											<a href="javascript:void(0)"><i class="flaticon-circle"></i></a>
+										</div>
+									</div>
+									<a href="javascript:;" (click)="Twitterurl()" *ngIf="isAuthtwitter" mat-raised-button color="accent">
+										<span>
+											<i class="fab fa-twitter"></i>&nbsp;
+											<span>Twitter</span>
+										</span>
+									</a>
+								</div>
+							</div>
+						</mat-expansion-panel>
+					</mat-accordion>
+				</div>
+			</div>
+		</kt-material-preview>
+	</div>
+</div>

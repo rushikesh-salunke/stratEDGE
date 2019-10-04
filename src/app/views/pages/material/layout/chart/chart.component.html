@@ -1,0 +1,79 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <br />
+  
+
+</body>
+</html>-->
+
+
+	<div>
+		<div class="col-sm-12 row">
+
+			<div class="col-sm-3">
+				<mat-form-field>
+					<mat-label>Platform</mat-label>
+
+					<form [formGroup]="placementForm">
+						<mat-select formControlName="PlacementList" (selectionChange)="onChange($event)" multiple>
+							<mat-option #allPlacement (click)="PlacementAllSelection()" [value]="0">All</mat-option>
+							<mat-option *ngFor="let placement of ListPlacement" (click)="placementPerOne(allPlacement.viewValue)" [value]="placement.id">
+								{{placement.value}}
+							</mat-option>
+						</mat-select>
+					</form>
+
+				</mat-form-field>
+			</div>
+
+			<div class="col-sm-3">
+				<mat-form-field>
+					<mat-label>Campaign</mat-label>
+					<form [formGroup]="searchUserForm">
+						<mat-select formControlName="CampaignList" multiple>
+							<mat-option #allSelected (click)="toggleAllSelection()" [value]="0">All</mat-option>
+							<mat-option *ngFor="let campaign of campaign_list" (click)="tosslePerOne(allSelected.viewValue)" [value]="campaign.CampaignID">
+								{{campaign.viewValue}}
+							</mat-option>
+						</mat-select>
+					</form>
+
+				</mat-form-field>
+			</div>
+
+			<div class="col-sm-3">
+
+				<mat-form-field>
+					<input matInput [matDatepicker]="dp" [(ngModel)]="start_date" placeholder="Start Date" disabled>
+					<mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+					<mat-datepicker #dp disabled="false"></mat-datepicker>
+				</mat-form-field>
+			</div>
+
+			<div class="col-sm-3">
+				<mat-form-field>
+					<input matInput [matDatepicker]="dp3" [(ngModel)]="end_date" placeholder="End Date" disabled>
+					<mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+					<mat-datepicker #dp3 disabled="false"></mat-datepicker>
+				</mat-form-field>
+			</div>
+
+			<div class="col-sm-3">
+				<!--<m-spinner-button [options]="spinner" (click)="submit(start_date,end_date)">Submit</m-spinner-button>-->
+				<button class="btn btn-primary btn-elevate kt-login__btn-primary" (click)="submit(start_date,end_date)">Submit</button>
+			</div>
+
+		</div>
+		<br />
+	</div>
+
+	<br />
+	<div id="chartdiv" style="width:100%;height:500px">
+
+	</div>
+

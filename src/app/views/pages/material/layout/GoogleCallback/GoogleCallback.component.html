@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+  <span class="alert-success" style="align-content:center;margin:0 auto;width:500px"><h5 style="color:black;text-align:center">Google Loging Success..!!</h5><br /><b style="color:black;">Note:-</b><span style="color:black">You have to enter below two information for using this product.</span></span>
+
+  <form class="m-form" name="form" #f="ngForm" novalidate>
+	  <div style="align-content:center;margin:0 auto;width:200px">
+	  	<div class="form-group">
+	  		<mat-form-field>
+	  			<mat-label>CustomerID</mat-label>
+	  			<input matInput type="text" name="customerid" placeholder="CustomerId" autocomplete="off" [(ngModel)]="model.customerid" #customerid="ngModel" required>
+	  		</mat-form-field>
+	  	</div>
+
+	  	<div class="form-group">
+	  		<mat-form-field>
+	  			<mat-label>Ads Developer Token</mat-label>
+	  			<input matInput type="text" name="adsdevtoken" placeholder="Ads developer token" autocomplete="off" [(ngModel)]="model.adsdevtoken" #adsdevtoken="ngModel" required>
+	  		</mat-form-field>
+	  	</div>
+
+	  	<button class="btn btn-primary btn-elevate kt-login__btn-primary" (click)="not_now()">Not Now</button>
+	  	<!--<m-spinner-button [options]="spinner" style="margin-left:10px" (click)="submit(customerid.value,adsdevtoken.value)">Submit</m-spinner-button>-->
+		<button (click)="submit(customerid.value,adsdevtoken.value)" style="margin-left:10px" [ngClass]="{'kt-spinner kt-spinner--right kt-spinner--md kt-spinner--light': loading}" id="kt_login_signin_submit" class="btn btn-primary btn-elevate kt-login__btn-primary">Submit</button>
+	  	<br /><br>
+	  </div>
+  </form>
+
+</body>
+</html>

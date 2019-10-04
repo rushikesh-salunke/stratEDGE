@@ -1,0 +1,12 @@
+:host {
+	::ng-deep {
+		ngb-tabset > .nav-tabs {
+			display: none;
+		}
+	}
+
+	#pieChart{
+		height:100%;
+		width:100%;
+	}
+}
