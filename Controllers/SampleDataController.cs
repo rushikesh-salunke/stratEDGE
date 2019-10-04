@@ -18,6 +18,7 @@ namespace stratEDGE_Web_App.Controllers
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
             var rng = new Random();
+			
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
